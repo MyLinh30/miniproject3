@@ -1,0 +1,55 @@
+<span><strong>Location hotel:</strong></span>
+<select id="loactionhotel" name="location_hotel">
+    <?php foreach ($block->getLocationHotel() as $hotel): ?>
+        <option value="<?php echo $hotel->getHotelId()?>"><?php echo $hotel->getLocationStreet() ?></option>
+    <?php endforeach; ?>
+</select>
+
+
+<!--<script>-->
+<!--    require(['jquery'],function ($){-->
+<!--        $('#loactionhotel').change(function (event) {-->
+<!--            event.preventDefault();-->
+<!--            let customLink = "http://localhost/m235/hotel/hotel/gethotelinfoajax";-->
+<!--            let getHotelId = $('#loactionhotel').val();-->
+<!--            $.ajax({-->
+<!--                url : customLink,-->
+<!--                type: "POST",-->
+<!--                data: { hotel_id :getHotelId },-->
+<!--                showLoader:true,-->
+<!--                dataType:'json',-->
+<!--                success : function (data)-->
+<!--                {-->
+<!--                   alert('thanh cong');-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    })-->
+<!--    // require([-->
+<!--    //     'jquery',-->
+<!--    //     'Magento_Ui/js/modal/modal',-->
+<!--    //     'mage/url',-->
+<!--    // ], function($,modal,urlBuilder) {-->
+<!--    //     var options = {-->
+<!--    //         type: 'popup',-->
+<!--    //         responsive: true,-->
+<!--    //         innerScroll: true,-->
+<!--    //         title: 'Magenest Part time test',-->
+<!--    //         buttons: [{-->
+<!--    //             text: $.mage.__('Close'),-->
+<!--    //             class: 'primary close action ',-->
+<!--    //             click: function () {-->
+<!--    //                 this.closeModal();-->
+<!--    //             }-->
+<!--    //         }]-->
+<!--    //     };-->
+<!--    //     var popup = modal(options, $('#popup-modal'));-->
+<!--    //     $("#btn_show_parttime").on("click",function(){-->
+<!--    //         $('#popup-modal').modal('openModal');-->
+<!--    //     });-->
+<!--    //-->
+<!--    //-->
+<!--    //-->
+<!--    //-->
+<!--    // });-->
+<!--</script>-->

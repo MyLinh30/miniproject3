@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+            id="Linh_Hotel::hotel"
+            title="Hotel"
+            module="Linh_Hotel"
+            sortOrder="51"
+            resource="Linh_Hotel::hotel"/>
+        <add
+            id="Linh_Hotel::show"
+            title="Show Hotel Grid "
+            module="Linh_Hotel"
+            sortOrder="15"
+            action="hotel/index/index"
+            parent="Linh_Hotel::hotel"
+            resource="Linh_Hotel::show"/>
+    </menu>
+
+</config>
+

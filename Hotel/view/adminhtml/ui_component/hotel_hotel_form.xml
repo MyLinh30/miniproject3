@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">
+                hotel_hotel_form.hotel_form_data_source
+            </item>
+            <item name="deps" xsi:type="string">
+                hotel_hotel_form.hotel_form_data_source
+            </item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Hotel Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">hotel_hotel_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="save" xsi:type="array">
+                <item name="name" xsi:type="string">save</item>
+                <item name="label" xsi:type="string" translate="true">Save Hotel :))</item>
+                <item name="class" xsi:type="string">primary</item>
+            </item>
+            <!--            <item name="back" xsi:type="string">Product\Manufacturer\Block\Adminhtml\Manufacturer\Edit\BackButton</item>-->
+            <item name="delete" xsi:type="string">Linh\Hotel\Block\Adminhtml\Hotel\Edit\DeleteButton</item>
+            <!--            <item name="reset" xsi:type="string">Product\Manufacturer\Block\Adminhtml\Manufacturer\Edit\ResetButton</item>-->
+        </item>
+
+
+    </argument>
+    <dataSource name="hotel_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Linh\Hotel\Model\HotelDataProvider</argument>
+            <argument name="name" xsi:type="string">hotel_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">hotel_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="hotel/hotel/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+    </dataSource>
+
+
+    <fieldset name="vendor_details">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="label" xsi:type="string" translate="true">Hotel Information Details</item>
+                <item name="sortOrder" xsi:type="number">0</item>
+            </item>
+        </argument>
+        <field name="hotel_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Hotel Name</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">hotelform</item>
+                    <item name="dataScope" xsi:type="string">hotel_name</item>
+                </item>
+            </argument>
+        </field>
+        <field name="location_street">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Location Street</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">hotelform</item>
+                    <item name="dataScope" xsi:type="string">location_street</item>
+                </item>
+            </argument>
+        </field>
+        <field name="location_city">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Location City</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">hotelform</item>
+                    <item name="dataScope" xsi:type="string">location_city</item>
+                </item>
+            </argument>
+        </field>
+        <field name="location_state">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Location State</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">hotelform</item>
+                    <item name="dataScope" xsi:type="string">location_state</item>
+                </item>
+            </argument>
+        </field>
+        <field name="location_country">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Location Country</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">hotelform</item>
+                    <item name="dataScope" xsi:type="string">location_country</item>
+                </item>
+            </argument>
+        </field>
+        <field name="contact_phone">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Contact Phone</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">hotelform</item>
+                    <item name="dataScope" xsi:type="string">contact_phone</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-number" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="total_available_room">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Total available room</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">hotelform</item>
+                    <item name="dataScope" xsi:type="string">total_available_room</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-number" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="available_single">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="default" xsi:type="string">100</item>
+                    <item name="label" xsi:type="string" translate="true">Available Single</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">hotelform</item>
+                    <item name="dataScope" xsi:type="string">available_single</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-number" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="available_double">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="default" xsi:type="string">100</item>
+                    <item name="label" xsi:type="string" translate="true">Available double</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">hotelform</item>
+                    <item name="dataScope" xsi:type="string">available_double</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-number" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="available_triple">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="default" xsi:type="string">1000</item>
+                    <item name="label" xsi:type="string" translate="true">Available Triple</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">hotelform</item>
+                    <item name="dataScope" xsi:type="string">available_triple</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-number" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

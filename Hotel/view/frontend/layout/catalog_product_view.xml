@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <referenceContainer name="product.info.main">
+                <referenceBlock name="product.info" >
+                    <referenceContainer name="product.info.form.content" >
+                        <block  class="Linh\Hotel\Block\RoomTypeHotel"  name="product.info.form.content.room.type.hotel"  template="room_type_hotel.phtml"/>
+                        <block  class="Linh\Hotel\Block\SelectLocationHotel" before="product.info.form.content.room.type.hotel" name="product.info.form.content.location.hotel" template="select_location_hotel.phtml"/>
+                    </referenceContainer>
+                </referenceBlock>
+            </referenceContainer>
+        </referenceContainer>
+    </body>
+</page>
