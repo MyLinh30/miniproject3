@@ -11,6 +11,18 @@
                         </resource>
                     </resource>
                 </resource>
+
+
+
+                <resource id="Linh_Hotel::management" title="Management" sortOrder="50">
+                    <resource id="Linh_Hotel::booking" title="Booking Management" sortOrder="50">
+                        <resource id="Linh_Hotel::bookingection"
+                                  title="Booking Section" sortOrder="60">
+                        </resource>
+                    </resource>
+                </resource>
+
+
             </resource>
         </resources>
     </acl>

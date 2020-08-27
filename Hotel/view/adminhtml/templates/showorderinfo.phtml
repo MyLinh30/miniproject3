@@ -1,0 +1,16 @@
+<h2>Report</h2>
+<table border="1" class="col-m-6 data-grid" >
+    <?php foreach ($block->getOderInfo() as $order):?>
+    <tr class="data-row">
+        <td>Order ID</td>
+        <td><?php echo $block->getEntityId() ?></td>
+    </tr>
+    <tr class="data-row _odd-row">
+        <td>Product Name</td>
+        <td><?php echo $block->getState() ?></td>
+    </tr>
+    <?php endforeach;?>
+</table>
+
+
+

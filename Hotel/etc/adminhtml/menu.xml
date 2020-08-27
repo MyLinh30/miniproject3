@@ -2,10 +2,17 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add
+            id="Linh_Hotel::management"
+            title="Management Hotel"
+            module="Linh_Hotel"
+            sortOrder="50"
+            resource="Linh_Hotel::management"/>
+        <add
             id="Linh_Hotel::hotel"
             title="Hotel"
             module="Linh_Hotel"
             sortOrder="51"
+            parent="Linh_Hotel::management"
             resource="Linh_Hotel::hotel"/>
         <add
             id="Linh_Hotel::show"
@@ -15,7 +22,22 @@
             action="hotel/index/index"
             parent="Linh_Hotel::hotel"
             resource="Linh_Hotel::show"/>
-    </menu>
 
+        <add
+            id="Linh_Hotel::booking"
+            title="Booking Management"
+            module="Linh_Hotel"
+            sortOrder="52"
+            resource="Linh_Hotel::booking"
+            parent="Linh_Hotel::management"/>
+        <add
+            id="Linh_Hotel::bookingsection"
+            title="Show Order with product roomtype Double"
+            module="Linh_Hotel"
+            sortOrder="16"
+            action="hotel/hotel/show"
+            parent="Linh_Hotel::booking"
+            resource="Linh_Hotel::bookingsection"/>
+    </menu>
 </config>
 
