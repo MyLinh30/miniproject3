@@ -49,18 +49,18 @@ class getHotelAjax extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-        $idhotel = $this->getRequest()->getParam('hotel_id');
+        $idhotel = $this->getRequest()->getPost('getHotelId');
         $hotelModel = $this->hotelFactory->create()->load($idhotel);
         $resultJson = $this->resultJsonFactory->create();
-        if($hotelModel -> getHotelId()) {
-            $data = array($hotelModel->getHotelName(),
+        if($hotelModel -> getId()) {
+            $data = array(
+                $hotelModel->getHotelName(),
                 $hotelModel->getLocationStreet(),
                 $hotelModel->getLocationCity(),
                 $hotelModel->getLocationState(),
                 $hotelModel->getLocationCountry());
         }
        return $resultJson->setData($data);
-
     }
 }
 

@@ -18,15 +18,13 @@ class AddAdditionalOptions implements ObserverInterface
 
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-
         if ($this->_request->getFullActionName() == 'checkout_cart_add')
         {
-            $product = $observer->getProduct();
+            $product = $observer->getData('product');
             $additionalOptions = [];
             $additionalOptions[] = array(
-                'label' => "ID",
-//                'value' => $this->_request->getParam('location_hotel'),
-                'value' => $product->getID(),
+                'label' => "Hotel ID",
+                'value' => $this->_request->getParam('location_hotel'),
             );
             $product->addCustomOption('additional_options', $this->serializer->serialize($additionalOptions));
         }

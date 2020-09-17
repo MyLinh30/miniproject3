@@ -4,20 +4,38 @@
         <option value="<?php echo $hotel->getHotelId()?>"><?php echo $hotel->getLocationStreet() ?></option>
     <?php endforeach; ?>
 </select>
+<div id="showhotel"></div>
 <script>
     require(['jquery'],function ($){
         $('#loactionhotel').change(function (event) {
             event.preventDefault();
             let link_url = "http://m234.local/hotel/index/gethotelajax";
             let getHotelId = $('#loactionhotel').val();
-            $.ajax({
-                url : link_url,
-                type: "POST",
-                data: { hotel_id :getHotelId },
-                dataType:'json',
-                success : function (data)
+            $.post(link_url, {
+                        getHotelId: getHotelId,
+            })
+                .done(function (data)
                 {
-                   alert(data);
+                    $("#showhotel").html(data);
+                    // var options = {
+                    //     type: 'popup',
+                    //     responsive: true,
+                    //     innerScroll: true,
+                    //     title: 'Show Information Hotel',
+                    //     buttons: [{
+                    //         text: $.mage.__('Close'),
+                    //         class: '',
+                    //         click: function () {
+                    //             this.closeModal();
+                    //         }
+                    //     }]
+                    // };
+                    // var popup = modal(options, $('#showhotel'));
+                    // $('#showhotel').modal('openModal');
+                })
+                .fail(function ()
+                {
+                    alert("False");
                 });
         });
     });

@@ -1,5 +1,17 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
-<event name="catalog_product_load_after">
-    <observer name="set_additional_options" instance="Linh\Hotel\Observer\AddAdditionalOptions" disabled="true"/>
-</event>
+
+
+    <event name="catalog_product_load_after">
+        <observer name="set_additional_options" instance="Linh\Hotel\Observer\AddAdditionalOptions" disabled="false"/>
+    </event>
+    <event name="checkout_cart_product_add_after">
+        <observer name="checkout_cart_product_add_after_observer" instance="Linh\Hotel\Observer\CheckoutCartAddObserver" disabled="true"/>
+    </event>
+    <event name="sales_model_service_quote_submit_before">
+        <observer name="sales_model_service_quote_submit_before_observer" instance="Linh\Hotel\Observer\QuoteSubmitObserver" disabled="true" />
+    </event>
+
+    <event name="sales_order_place_after">
+        <observer name="after_order_handle_quantity" instance="Linh\Hotel\Observer\HandleQuantity" disabled="true"/>
+    </event>
 </config>
